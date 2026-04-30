@@ -1,0 +1,2623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blake Elford × CDW — Senior Campaign Lead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cdw-red: #CC0000;
+    --cdw-red-dark: #A30000;
+    --cdw-red-deep: #7A0000;
+    --cdw-red-tint: #FFE5E5;
+    --ink: #0A0A0A;
+    --ink-soft: #2A2A2A;
+    --paper: #FAF8F5;
+    --paper-2: #F2EFE9;
+    --paper-3: #E8E4DC;
+    --gray-1: #6B6B6B;
+    --gray-2: #B5B0A8;
+    --gray-3: #D8D4CC;
+    --gray-4: #E5E2DC;
+
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    --max-width: 1280px;
+    --gutter: clamp(1.25rem, 4vw, 3rem);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  /* Subtle paper grain texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    z-index: 100;
+    mix-blend-mode: multiply;
+  }
+
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+
+  /* Typography */
+  .display {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 0.98;
+  }
+
+  .display-xl {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(3rem, 9vw, 7.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+  }
+
+  .display-lg {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(2.25rem, 5.5vw, 4.25rem);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+  }
+
+  .display-md {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cdw-red);
+  }
+
+  .eyebrow-ink {
+    color: var(--ink);
+    opacity: 0.55;
+  }
+
+  .body-lg {
+    font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+
+  /* Top nav */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--paper);
+    border-bottom: 1px solid var(--gray-3);
+    backdrop-filter: blur(8px);
+    background-color: rgba(250, 248, 245, 0.85);
+  }
+
+  .topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem var(--gutter);
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .brand-mark {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+  }
+
+  .brand-mark .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--cdw-red);
+    box-shadow: 0 0 0 2px var(--paper), 0 0 0 3px var(--cdw-red);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  .nav-links a:hover {
+    color: var(--cdw-red);
+  }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--ink);
+    color: var(--paper) !important;
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+    transition: background 0.2s;
+  }
+
+  .nav-cta:hover {
+    background: var(--cdw-red);
+    color: var(--paper) !important;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links a:not(.nav-cta) {
+      display: none;
+    }
+  }
+
+  /* HERO */
+  .hero {
+    padding: clamp(4rem, 10vh, 8rem) 0 clamp(4rem, 8vh, 7rem);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 3rem;
+    position: relative;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+      gap: 4rem;
+      align-items: end;
+    }
+  }
+
+  .hero-eyebrow-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.1s forwards;
+  }
+
+  .hero-eyebrow-row .line {
+    width: 48px;
+    height: 1px;
+    background: var(--cdw-red);
+  }
+
+  .hero h1 {
+    margin-bottom: 1.75rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.25s forwards;
+  }
+
+  .hero h1 .accent {
+    color: var(--cdw-red);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .hero-meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem 2rem;
+    padding: 1.75rem 0;
+    border-top: 1px solid var(--gray-3);
+    border-bottom: 1px solid var(--gray-3);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.45s forwards;
+  }
+
+  @media (min-width: 600px) {
+    .hero-meta {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .meta-item .label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gray-1);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+
+  .meta-item .value {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--ink);
+  }
+
+  .hero-thesis {
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .hero-thesis p {
+    font-size: clamp(1.05rem, 1.3vw, 1.18rem);
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 60ch;
+  }
+
+  .hero-thesis p .strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* Hero side card */
+  .hero-card {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 2rem;
+    border-radius: 4px;
+    position: relative;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.5s forwards;
+  }
+
+  .hero-card::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: 8px;
+    bottom: 8px;
+    border: 1px solid var(--cdw-red);
+    z-index: -1;
+  }
+
+  .hero-card-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--cdw-red);
+    margin-bottom: 1rem;
+  }
+
+  .hero-card h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .hero-card p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: rgba(250, 248, 245, 0.78);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cdw-red);
+    text-decoration: none;
+    border-bottom: 1px solid var(--cdw-red);
+    padding-bottom: 0.2rem;
+    transition: gap 0.2s;
+  }
+
+  .hero-card-link:hover {
+    gap: 0.8rem;
+  }
+
+  /* Hero corner ornament */
+  .hero-mark {
+    position: absolute;
+    right: -2rem;
+    top: 0;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--gray-2);
+    letter-spacing: 0.08em;
+    transform: rotate(90deg);
+    transform-origin: top right;
+    display: none;
+  }
+
+  @media (min-width: 1280px) {
+    .hero-mark {
+      display: block;
+    }
+  }
+
+  /* SECTION wrappers */
+  section {
+    padding: clamp(4rem, 8vh, 7rem) 0;
+    position: relative;
+  }
+
+  section.dark {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  section.tinted {
+    background: var(--paper-2);
+  }
+
+  .section-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+  }
+
+  @media (min-width: 900px) {
+    .section-head {
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: 4rem;
+      align-items: end;
+    }
+  }
+
+  .section-head .eyebrow {
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .section-head h2 {
+    margin-bottom: 0;
+  }
+
+  .section-head .lede {
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 55ch;
+  }
+
+  section.dark .section-head .lede {
+    color: rgba(250, 248, 245, 0.75);
+  }
+
+  /* THE THESIS / ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 3rem;
+  }
+
+  @media (min-width: 900px) {
+    .about-grid {
+      grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+      gap: 5rem;
+    }
+  }
+
+  .about-arc {
+    position: relative;
+  }
+
+  .arc-step {
+    position: relative;
+    padding-left: 2.25rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .arc-step:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 18px;
+    bottom: 0;
+    width: 1px;
+    background: var(--gray-3);
+  }
+
+  .arc-step .marker {
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 2px solid var(--cdw-red);
+  }
+
+  .arc-step.current .marker {
+    background: var(--cdw-red);
+  }
+
+  .arc-step .year {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--gray-1);
+    margin-bottom: 0.25rem;
+    display: block;
+  }
+
+  .arc-step h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 1.25;
+    color: var(--ink);
+  }
+
+  .arc-step p {
+    font-size: 0.92rem;
+    color: var(--gray-1);
+    margin-top: 0.35rem;
+    line-height: 1.5;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    border-top: 1px solid var(--gray-3);
+    border-left: 1px solid var(--gray-3);
+    margin-top: 2.5rem;
+  }
+
+  @media (min-width: 600px) {
+    .about-stats {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .stat-cell {
+    padding: 1.5rem 1.25rem;
+    border-right: 1px solid var(--gray-3);
+    border-bottom: 1px solid var(--gray-3);
+  }
+
+  .stat-cell .stat-num {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    line-height: 1;
+    color: var(--cdw-red);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.4rem;
+  }
+
+  .stat-cell .stat-label {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+
+  .about-narrative p {
+    font-size: clamp(1.02rem, 1.25vw, 1.15rem);
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin-bottom: 1.25rem;
+    max-width: 62ch;
+  }
+
+  .about-narrative p:last-child {
+    margin-bottom: 0;
+  }
+
+  .about-narrative .highlight {
+    color: var(--ink);
+    font-weight: 500;
+    background-image: linear-gradient(to bottom, transparent 60%, var(--cdw-red-tint) 60%);
+  }
+
+  /* CASE STUDIES */
+  .case-study {
+    border-top: 1px solid var(--gray-3);
+    padding-top: clamp(3rem, 6vh, 5rem);
+    padding-bottom: clamp(3rem, 6vh, 5rem);
+  }
+
+  .case-study:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .case-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .case-header {
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 3rem;
+      align-items: end;
+    }
+  }
+
+  .case-num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--cdw-red);
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+  }
+
+  .case-num small {
+    font-family: var(--font-mono);
+    font-style: normal;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--gray-1);
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+
+  .case-title h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.018em;
+    margin-bottom: 0.6rem;
+  }
+
+  .case-tagline {
+    color: var(--gray-1);
+    font-size: 0.95rem;
+  }
+
+  .case-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .case-body {
+      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+      gap: 3.5rem;
+    }
+  }
+
+  .case-narrative h4 {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--cdw-red);
+    margin-bottom: 0.7rem;
+    margin-top: 1.75rem;
+  }
+
+  .case-narrative h4:first-child {
+    margin-top: 0;
+  }
+
+  .case-narrative p {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin-bottom: 0.85rem;
+  }
+
+  .case-results {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    background: var(--gray-3);
+    margin-top: 2rem;
+    border: 1px solid var(--gray-3);
+  }
+
+  .result-cell {
+    padding: 1.25rem 1rem;
+    background: var(--paper);
+  }
+
+  .result-cell .num {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--cdw-red);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .result-cell .lbl {
+    font-size: 0.78rem;
+    color: var(--gray-1);
+    line-height: 1.4;
+  }
+
+  /* AI sidebar within case studies */
+  .ai-sidebar {
+    background: linear-gradient(160deg, var(--ink) 0%, #1a1a1a 100%);
+    color: var(--paper);
+    padding: 1.75rem;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-sidebar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, var(--cdw-red) 0%, transparent 70%);
+    opacity: 0.25;
+    pointer-events: none;
+  }
+
+  .ai-sidebar-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .ai-sidebar-eyebrow .pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--cdw-red);
+    box-shadow: 0 0 0 0 var(--cdw-red);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(204, 0, 0, 0.7); }
+    70% { box-shadow: 0 0 0 8px rgba(204, 0, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(204, 0, 0, 0); }
+  }
+
+  .ai-sidebar-eyebrow span {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cdw-red);
+  }
+
+  .ai-sidebar h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.15rem;
+    line-height: 1.25;
+    margin-bottom: 0.85rem;
+  }
+
+  .ai-sidebar p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: rgba(250, 248, 245, 0.78);
+    margin-bottom: 0.85rem;
+  }
+
+  .ai-sidebar p:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid rgba(204, 0, 0, 0.4);
+    color: var(--cdw-red);
+    border-radius: 999px;
+    margin-right: 0.4rem;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* AI METHODOLOGY (dark section) */
+  .ai-method-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .ai-method-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .ai-method-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .agent-card {
+    background: rgba(250, 248, 245, 0.04);
+    border: 1px solid rgba(250, 248, 245, 0.12);
+    padding: 1.5rem;
+    border-radius: 4px;
+    transition: border-color 0.3s, transform 0.3s;
+    position: relative;
+  }
+
+  .agent-card:hover {
+    border-color: var(--cdw-red);
+    transform: translateY(-2px);
+  }
+
+  .agent-card .role {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cdw-red);
+    margin-bottom: 0.85rem;
+  }
+
+  .agent-card h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.15rem;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    color: var(--paper);
+  }
+
+  .agent-card p {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: rgba(250, 248, 245, 0.7);
+  }
+
+  .method-philosophy {
+    margin-top: 4rem;
+    padding: 2.5rem;
+    background: rgba(250, 248, 245, 0.04);
+    border-left: 3px solid var(--cdw-red);
+  }
+
+  .method-philosophy blockquote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    line-height: 1.4;
+    color: var(--paper);
+    max-width: 60ch;
+  }
+
+  .method-philosophy cite {
+    display: block;
+    margin-top: 1.25rem;
+    font-style: normal;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--cdw-red);
+  }
+
+  /* CAMPAIGN PLANNER */
+  .planner-section {
+    background:
+      radial-gradient(ellipse at top right, rgba(204, 0, 0, 0.06) 0%, transparent 50%),
+      var(--paper-2);
+    position: relative;
+  }
+
+  .planner-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--cdw-red), transparent);
+  }
+
+  .planner-intro {
+    max-width: 56rem;
+    margin-bottom: 3rem;
+  }
+
+  .planner-intro .eyebrow {
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .planner-intro h2 {
+    margin-bottom: 1.25rem;
+  }
+
+  .planner-intro p {
+    font-size: clamp(1rem, 1.2vw, 1.12rem);
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 60ch;
+  }
+
+  .planner-card {
+    background: var(--paper);
+    border: 1px solid var(--gray-3);
+    box-shadow: 0 1px 0 var(--gray-3), 0 20px 60px -30px rgba(10, 10, 10, 0.15);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .planner-header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 1.25rem 1.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .planner-header-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .planner-header-title .glyph {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--cdw-red);
+    display: grid;
+    place-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--paper);
+    font-weight: 600;
+  }
+
+  .planner-header-title h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+
+  .planner-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 245, 0.7);
+  }
+
+  .planner-status .live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #44C46A;
+    box-shadow: 0 0 6px #44C46A;
+  }
+
+  .planner-body {
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+  }
+
+  .planner-form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 700px) {
+    .planner-form {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .field-group label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gray-1);
+    margin-bottom: 0.6rem;
+  }
+
+  .pill-set {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .pill {
+    background: var(--paper-2);
+    border: 1px solid var(--gray-3);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-weight: 500;
+  }
+
+  .pill:hover {
+    border-color: var(--ink);
+  }
+
+  .pill.active {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+
+  .field-group select,
+  .field-group input,
+  .field-group textarea {
+    width: 100%;
+    background: var(--paper-2);
+    border: 1px solid var(--gray-3);
+    border-radius: 4px;
+    padding: 0.7rem 0.9rem;
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    color: var(--ink);
+    transition: border-color 0.15s;
+  }
+
+  .field-group select:focus,
+  .field-group input:focus,
+  .field-group textarea:focus {
+    outline: none;
+    border-color: var(--cdw-red);
+  }
+
+  .field-group.full {
+    grid-column: 1 / -1;
+  }
+
+  .field-group textarea {
+    min-height: 70px;
+    resize: vertical;
+    font-family: var(--font-body);
+    line-height: 1.5;
+  }
+
+  .planner-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.75rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--gray-3);
+  }
+
+  .planner-note {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--gray-1);
+    letter-spacing: 0.04em;
+    max-width: 36ch;
+    line-height: 1.5;
+  }
+
+  .btn-primary {
+    background: var(--cdw-red);
+    color: var(--paper);
+    border: none;
+    padding: 0.85rem 1.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    background: var(--cdw-red-dark);
+    transform: translateY(-1px);
+  }
+
+  .btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .btn-primary .arrow {
+    transition: transform 0.2s;
+  }
+
+  .btn-primary:hover:not(:disabled) .arrow {
+    transform: translateX(3px);
+  }
+
+  /* Planner output */
+  .planner-output {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--gray-3);
+    display: none;
+  }
+
+  .planner-output.visible {
+    display: block;
+    animation: fadeUp 0.4s ease forwards;
+  }
+
+  .output-loading {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 0;
+  }
+
+  .loading-orb {
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--gray-3);
+    border-top-color: var(--cdw-red);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .loading-text {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--gray-1);
+    letter-spacing: 0.04em;
+  }
+
+  .output-error {
+    padding: 1.25rem;
+    background: var(--cdw-red-tint);
+    border-left: 3px solid var(--cdw-red);
+    color: var(--cdw-red-deep);
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .brief-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .brief-meta-pill {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+  }
+
+  .brief-hook {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.4rem, 2.6vw, 2rem);
+    line-height: 1.2;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--gray-3);
+    margin-bottom: 2rem;
+  }
+
+  .brief-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .brief-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .brief-block h5 {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--cdw-red);
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--gray-3);
+  }
+
+  .brief-block p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+
+  .brief-list {
+    list-style: none;
+  }
+
+  .brief-list li {
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--gray-3);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+
+  .brief-list li:last-child {
+    border-bottom: none;
+  }
+
+  .brief-list strong {
+    color: var(--ink);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .brief-message {
+    grid-column: 1 / -1;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 1.75rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    position: relative;
+  }
+
+  .brief-message h5 {
+    color: var(--cdw-red);
+    border-bottom-color: rgba(250, 248, 245, 0.15);
+    margin-bottom: 1rem;
+  }
+
+  .brief-message blockquote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    line-height: 1.4;
+    color: var(--paper);
+  }
+
+  /* WHY CDW */
+  .why-cdw-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  @media (min-width: 900px) {
+    .why-cdw-grid {
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: 4rem;
+    }
+  }
+
+  .why-cdw-list {
+    list-style: none;
+  }
+
+  .why-cdw-list li {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--gray-3);
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 1.25rem;
+    align-items: start;
+  }
+
+  .why-cdw-list li:last-child {
+    border-bottom: none;
+  }
+
+  .why-cdw-list .num {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--cdw-red);
+    letter-spacing: 0.1em;
+    padding-top: 0.2rem;
+  }
+
+  .why-cdw-list h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .why-cdw-list p {
+    font-size: 0.95rem;
+    color: var(--gray-1);
+    line-height: 1.55;
+  }
+
+  /* FOOTER / CONTACT */
+  .contact {
+    background: var(--ink);
+    color: var(--paper);
+    padding: clamp(4rem, 10vh, 7rem) 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact::after {
+    content: '';
+    position: absolute;
+    bottom: -60%;
+    right: -20%;
+    width: 60%;
+    aspect-ratio: 1;
+    background: radial-gradient(circle, var(--cdw-red) 0%, transparent 65%);
+    opacity: 0.18;
+    pointer-events: none;
+  }
+
+  .contact-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 3rem;
+  }
+
+  @media (min-width: 900px) {
+    .contact-grid {
+      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+      gap: 4rem;
+    }
+  }
+
+  .contact h2 {
+    color: var(--paper);
+    margin-bottom: 1.5rem;
+  }
+
+  .contact h2 .accent {
+    color: var(--cdw-red);
+    font-style: italic;
+  }
+
+  .contact-lede {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(250, 248, 245, 0.75);
+    max-width: 50ch;
+    margin-bottom: 2rem;
+  }
+
+  .contact-channels {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-channel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.1rem 1.5rem;
+    background: rgba(250, 248, 245, 0.04);
+    border: 1px solid rgba(250, 248, 245, 0.12);
+    border-radius: 4px;
+    color: var(--paper);
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .contact-channel:hover {
+    border-color: var(--cdw-red);
+    background: rgba(204, 0, 0, 0.08);
+  }
+
+  .contact-channel .label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cdw-red);
+    margin-bottom: 0.25rem;
+    display: block;
+  }
+
+  .contact-channel .value {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.05rem;
+  }
+
+  .contact-channel .arrow {
+    color: var(--cdw-red);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+  }
+
+  .footer-bottom {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(250, 248, 245, 0.12);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: rgba(250, 248, 245, 0.5);
+    letter-spacing: 0.06em;
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Selection */
+  ::selection {
+    background: var(--cdw-red);
+    color: var(--paper);
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-mark">
+      <span class="dot"></span>
+      <span>Blake Elford</span>
+      <span style="opacity: 0.4; font-weight: 400;">×</span>
+      <span style="color: var(--cdw-red);">CDW</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#case-studies">Case Studies</a></li>
+      <li><a href="#ai-method">AI Methodology</a></li>
+      <li><a href="#planner">Campaign Planner</a></li>
+      <li><a href="#contact" class="nav-cta">Get in touch <span>→</span></a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow-row">
+          <span class="line"></span>
+          <span class="eyebrow">An application for the Senior Campaign Lead role</span>
+        </div>
+
+        <h1 class="display-xl">
+          Built like<br/>
+          a <span class="accent">campaign</span>,<br/>
+          not a résumé.
+        </h1>
+
+        <div class="hero-meta">
+          <div class="meta-item">
+            <span class="label">Candidate</span>
+            <span class="value">Blake Elford</span>
+          </div>
+          <div class="meta-item">
+            <span class="label">For</span>
+            <span class="value">CDW</span>
+          </div>
+          <div class="meta-item">
+            <span class="label">Role</span>
+            <span class="value">Senior Campaign Lead</span>
+          </div>
+          <div class="meta-item">
+            <span class="label">Based</span>
+            <span class="value">Chicago, IL</span>
+          </div>
+        </div>
+
+        <div class="hero-thesis">
+          <p>
+            <span class="strong">CDW says it's becoming an AI-fluent organization. This site is what that looks like in practice.</span>
+            Three real campaigns, the methodology that powered them, and a working tool you can use to spin up a campaign brief for any CDW segment in real time. No mock-ups. No vibes. Just the way I'd think through your problems.
+          </p>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-card-eyebrow">In ninety seconds</div>
+        <h3>Skip ahead to the part where I generate a campaign brief for your segment, live, using Claude.</h3>
+        <p>Pick a CDW vertical, a funnel stage, and a solution category. The planner returns a positioning hook, channel mix, event strategy, and KPI framework, generated fresh each time.</p>
+        <a href="#planner" class="hero-card-link">Try the planner <span>→</span></a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="tinted">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">About</span>
+        <h2 class="display-lg">A career arc, in three moves.</h2>
+      </div>
+      <p class="lede">Sole marketer at a startup. Segment lead at a global enterprise. Now looking for the next chapter, ideally one where integrated campaigns, AI, and a multi-stakeholder buyer journey are all in scope.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-arc">
+        <div class="arc-step">
+          <span class="marker"></span>
+          <span class="year">2019 — 2024</span>
+          <h4>Sole marketer at Fuel Me</h4>
+          <p>Built the entire marketing function from zero. Through to an $18M Series A.</p>
+        </div>
+        <div class="arc-step">
+          <span class="marker"></span>
+          <span class="year">2024 — 2026</span>
+          <h4>Segment marketing at Life Fitness / Hammer Strength</h4>
+          <p>Owned U.S. GTM for Hospitality and MUH. ~$418M serviceable market.</p>
+        </div>
+        <div class="arc-step current">
+          <span class="marker"></span>
+          <span class="year">Now</span>
+          <h4>Looking for the next role.</h4>
+          <p>Strategy-heavy, integrated, B2B. Ideally with a team that wants to actually use AI in the work.</p>
+        </div>
+      </div>
+
+      <div class="about-narrative">
+        <p>I'm a B2B marketing manager with six-plus years across two distinct environments. At Fuel Me I was the only marketer for five years, building the CRM, the email program, the paid media engine, and the content strategy from scratch. The work helped contribute to <span class="highlight">5x year-over-year sales growth</span> and a Series A round.</p>
+        <p>At Life Fitness I traded blank-canvas freedom for stakeholder complexity. I owned U.S. segment marketing for two of the largest verticals in commercial fitness, ran integrated campaigns into a 50,000-contact database, and partnered with field sellers across hospitality and multi-unit housing.</p>
+        <p>The combination is rare. <span class="highlight">Startup scrap plus enterprise stakeholder management.</span> It's the same skill set CDW needs in a Senior Campaign Lead: someone who can architect integrated programs, work in a matrix, and ship the work without waiting for ideal conditions.</p>
+
+        <div class="about-stats">
+          <div class="stat-cell">
+            <div class="stat-num">$670K+</div>
+            <div class="stat-label">pipeline from a single warranty campaign</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-num">~$418M</div>
+            <div class="stat-label">combined serviceable market under management</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-num">$10M+</div>
+            <div class="stat-label">in conference-attributed opportunities (2025)</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-num">90%</div>
+            <div class="stat-label">reduction in cost per lead at Fuel Me</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-num">$18M</div>
+            <div class="stat-label">Series A supported as sole marketer</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-num">50K → 13K</div>
+            <div class="stat-label">contact-title gap closed via SFDC enrichment</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="case-studies">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Case Studies</span>
+        <h2 class="display-lg">Three campaigns. Real numbers. The work behind them.</h2>
+      </div>
+      <p class="lede">Each case study includes how AI fit into the workflow, not as a gimmick but as a thought partner that compressed timelines and elevated the output.</p>
+    </div>
+
+    <!-- CASE 1 -->
+    <article class="case-study">
+      <div class="case-header">
+        <div class="case-num">
+          <small>CASE / 01</small>
+          01
+        </div>
+        <div class="case-title">
+          <h3>"A Stay That Moves You"</h3>
+          <p class="case-tagline">An integrated campaign for the U.S. Hospitality segment at Life Fitness.</p>
+        </div>
+      </div>
+
+      <div class="case-body">
+        <div class="case-narrative">
+          <h4>The Challenge</h4>
+          <p>The U.S. Hospitality segment had never run a full-funnel integrated campaign. Messaging was product-centric. Channels operated in silos. Field sellers were asking for tools they didn't have, and the segment was leaving demand on the table in a market where Life Fitness held an 18.3% NAMER share.</p>
+
+          <h4>The Approach</h4>
+          <p>I built the campaign concept and brief end-to-end: four messaging pillars, a positioning shift from product-centric to operator-centric, and an orchestration plan that tied social, content, SEO, web, email, and trade media into a single narrative. Then I worked across functions to ship it without an external agency.</p>
+
+          <h4>The Execution</h4>
+          <p>Campaign launched across six channels in coordinated waves. The Hospitality Guide and segment landing pages were rebuilt from scratch, mapped to a six-touch email sequence, and amplified through trade journal placements and event activations. Sales got a refreshed enablement library tied to the campaign messaging.</p>
+
+          <div class="case-results">
+            <div class="result-cell">
+              <div class="num">First</div>
+              <div class="lbl">Full-funnel integrated campaign in segment history</div>
+            </div>
+            <div class="result-cell">
+              <div class="num">6 channels</div>
+              <div class="lbl">Orchestrated under a single narrative arc</div>
+            </div>
+            <div class="result-cell">
+              <div class="num">~50K</div>
+              <div class="lbl">Hospitality contacts segmented across three buyer tiers</div>
+            </div>
+            <div class="result-cell">
+              <div class="num">0 → 1</div>
+              <div class="lbl">Operator-centric positioning framework, now in use</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="ai-sidebar">
+          <div class="ai-sidebar-eyebrow">
+            <span class="pulse"></span>
+            <span>AI in the workflow</span>
+          </div>
+          <h4>Custom agents replaced the missing agency.</h4>
+          <p>The segment didn't have agency budget. Instead of outsourcing the missing roles, I built a small system of Claude-powered agents modeled after a creative shop: a strategist, a copywriter, a creative director, and a planner.</p>
+          <p>Each agent had its own brief, its own voice, and a task scope. I'd run drafts through them in sequence, then take an 80/20 cut on whatever came back to refine into the final asset. The result wasn't AI doing the work, it was AI compressing the loop between strategy and execution.</p>
+          <div style="margin-top: 1rem;">
+            <span class="ai-tag">Strategist</span>
+            <span class="ai-tag">Copywriter</span>
+            <span class="ai-tag">Creative Director</span>
+            <span class="ai-tag">Channel Planner</span>
+          </div>
+        </aside>
+      </div>
+    </article>
+
+    <!-- CASE 2 -->
+    <article class="case-study">
+      <div class="case-header">
+        <div class="case-num">
+          <small>CASE / 02</small>
+          02
+        </div>
+        <div class="case-title">
+          <h3>ABM in action: warranty + CapEx</h3>
+          <p class="case-tagline">Two account-based plays, one CRM stack, $1M+ in attributed pipeline.</p>
+        </div>
+      </div>
+
+      <div class="case-body">
+        <div class="case-narrative">
+          <h4>The Challenge</h4>
+          <p>Multi-Unit Housing had a known pool of warranty-eligible accounts and a hospitality vertical that was missing its annual CapEx planning window entirely. Both were wide-open opportunities, and both required precision: the right accounts, the right reps, the right window.</p>
+
+          <h4>The Approach</h4>
+          <p>I built two ABM plays around the same engine. For warranty: a Pardot Engagement Studio sequence sent from individual sellers' inboxes, sourced from Salesforce + ZoomInfo enrichment. For CapEx: a seasonality-based two-touch sequence to ~18K hospitality contacts, with Microsoft Bookings introduced as a low-friction CTA so reps could schedule consultations without back-and-forth.</p>
+
+          <h4>The Execution</h4>
+          <p>Both campaigns ran out of the same Pardot infrastructure I'd previously rebuilt for funnel-stage tracking. Each touchpoint was scored, each opportunity attributed back through Salesforce. The CapEx campaign was the segment's first seasonality-based program; we onboarded every key account manager onto Bookings before launch.</p>
+
+          <div class="case-results">
+            <div class="result-cell">
+              <div class="num">$670K+</div>
+              <div class="lbl">Attributed pipeline from the warranty promo</div>
+            </div>
+            <div class="result-cell">
+              <div class="num">34</div>
+              <div class="lbl">New opportunities generated</div>
+            </div>
+            <div class="result-cell">
+              <div class="num">~$378K</div>
+              <div class="lbl">CapEx pipeline across Hospitality and MUH</div>
+            </div>
+            <div class="result-cell">
+              <div class="num">8K + 18K</div>
+              <div class="lbl">Targeted contacts across the two campaigns</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="ai-sidebar">
+          <div class="ai-sidebar-eyebrow">
+            <span class="pulse"></span>
+            <span>AI in the workflow</span>
+          </div>
+          <h4>Personalization, scaled by hand.</h4>
+          <p>Both campaigns sent from individual sellers, not generic marketing. That meant variants for tone, cadence, and audience tier. Claude helped me draft and pressure-test the copy variants for each rep so the messages sounded like the seller, not like marketing.</p>
+          <p>The output: faster QA cycles, more consistent voice across reps, and the ability to ship A/B variants without a copywriter in the seat.</p>
+          <div style="margin-top: 1rem;">
+            <span class="ai-tag">Copy Variants</span>
+            <span class="ai-tag">Tone Calibration</span>
+            <span class="ai-tag">QA Loops</span>
+          </div>
+        </aside>
+      </div>
+    </article>
+
+    <!-- CASE 3 -->
+    <article class="case-study">
+      <div class="case-header">
+        <div class="case-num">
+          <small>CASE / 03</small>
+          03
+        </div>
+        <div class="case-title">
+          <h3>The paid search turnaround</h3>
+          <p class="case-tagline">A $50K/month media spend, gone wrong, then put right at Fuel Me.</p>
+        </div>
+      </div>
+
+      <div class="case-body">
+        <div class="case-narrative">
+          <h4>The Challenge</h4>
+          <p>Fuel Me's paid search was running at roughly $900 per lead. Lead quality was inconsistent, the funnel wasn't converting, and the spend was a real percentage of monthly burn. As sole marketer, I owned the diagnosis and the fix.</p>
+
+          <h4>The Approach</h4>
+          <p>I started with intent. Audited every active keyword group against the actual buyer search behavior we were seeing in HubSpot, then pulled SQL data from sales to map closed-won accounts back to their original entry queries. The pattern was clear: we were buying volume, not intent. The keyword strategy had drifted from the ICP.</p>
+
+          <h4>The Execution</h4>
+          <p>Restructured the account around tighter intent clusters, built negative keyword lists from the bottom up, rewrote ad copy to match buyer language, and overhauled the landing pages to mirror the search query. Then ran the optimization through an offshore execution team on a weekly cadence.</p>
+
+          <div class="case-results">
+            <div class="result-cell">
+              <div class="num">$900 → $90</div>
+              <div class="lbl">Cost per lead, in roughly two quarters</div>
+            </div>
+            <div class="result-cell">
+              <div class="num">90%</div>
+              <div class="lbl">Reduction in CPL while improving lead quality</div>
+            </div>
+            <div class="result-cell">
+              <div class="num">5x YoY</div>
+              <div class="lbl">Sales growth this turnaround contributed to</div>
+            </div>
+            <div class="result-cell">
+              <div class="num">$50K/mo</div>
+              <div class="lbl">Spend reallocated to higher-intent terms</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="ai-sidebar">
+          <div class="ai-sidebar-eyebrow">
+            <span class="pulse"></span>
+            <span>The diagnostic mindset</span>
+          </div>
+          <h4>Performance work is hypothesis work.</h4>
+          <p>This one predates my heaviest AI use, but the discipline is the same one I now apply with Claude in the loop. Frame the hypothesis. Pull the data. Test the cheapest variant first. Don't ship the next round until you can name what you learned from the last one.</p>
+          <p>It's the same approach CDW's JD describes when it asks for "sharp analytical instincts" and continuous improvement against MQLs, conversion rates, and ROI.</p>
+        </aside>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- AI METHODOLOGY -->
+<section id="ai-method" class="dark">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Methodology</span>
+        <h2 class="display-lg">How I actually use AI in campaign work.</h2>
+      </div>
+      <p class="lede">Not "uses ChatGPT for emails." A real workflow that treats AI as a junior team you direct, review, and edit. Below: the four agents I most often run, and the philosophy underneath them.</p>
+    </div>
+
+    <div class="ai-method-grid">
+      <div class="agent-card">
+        <div class="role">Agent / 01</div>
+        <h4>The Strategist</h4>
+        <p>Pressure-tests positioning. Given a brief, returns the three competing angles before I commit. Stress-tests the one I pick against likely objections.</p>
+      </div>
+      <div class="agent-card">
+        <div class="role">Agent / 02</div>
+        <h4>The Copywriter</h4>
+        <p>Drafts variants in the voice of the brand or the seller, depending on the channel. Calibrated against tone samples I provide upfront, not against generic "marketing copy."</p>
+      </div>
+      <div class="agent-card">
+        <div class="role">Agent / 03</div>
+        <h4>The Creative Director</h4>
+        <p>Critiques the work the way a CD would in a review: what's the idea, where does it land, where does it strain. Turns 80% drafts into 95% drafts faster.</p>
+      </div>
+      <div class="agent-card">
+        <div class="role">Agent / 04</div>
+        <h4>The Channel Planner</h4>
+        <p>Maps a campaign concept to channel logic and event strategy by funnel stage. Outputs a structured plan I can take to a cross-functional working session.</p>
+      </div>
+    </div>
+
+    <div class="method-philosophy">
+      <blockquote>
+        AI fluency isn't about replacing the marketer. It's about getting to the 80% draft fast enough that the human work, the editing, the judgment, the strategy, can actually breathe. That's what I bring to a campaign team.
+      </blockquote>
+      <cite>— Blake Elford, philosophy on AI in marketing work</cite>
+    </div>
+  </div>
+</section>
+
+<!-- CAMPAIGN PLANNER -->
+<section id="planner" class="planner-section">
+  <div class="container">
+    <div class="planner-intro">
+      <span class="eyebrow">Try it yourself</span>
+      <h2 class="display-lg">The CDW Campaign Planner.</h2>
+      <p>Pick a segment. Pick a funnel stage. Pick a solution category. Add any context you want. The planner returns a campaign brief composed from a library of CDW-tailored frameworks, written in my voice, that varies across CDW's segments, solution categories, and funnel stages. Run it twice with the same inputs and you'll see different angles, the same way a real working session would.</p>
+    </div>
+
+    <div class="planner-card">
+      <div class="planner-header">
+        <div class="planner-header-title">
+          <span class="glyph">B</span>
+          <h3>Campaign Brief Generator</h3>
+        </div>
+        <div class="planner-status">
+          <span class="live-dot"></span>
+          <span>Curated for CDW</span>
+        </div>
+      </div>
+
+      <div class="planner-body">
+        <div class="planner-form">
+          <div class="field-group">
+            <label>CDW Segment</label>
+            <div class="pill-set" data-field="segment">
+              <button class="pill active" data-value="Business / Commercial">Business</button>
+              <button class="pill" data-value="Government / Public Sector">Government</button>
+              <button class="pill" data-value="Education (K-12 + Higher Ed)">Education</button>
+              <button class="pill" data-value="Healthcare">Healthcare</button>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label>Funnel Stage</label>
+            <div class="pill-set" data-field="stage">
+              <button class="pill active" data-value="Awareness">Awareness</button>
+              <button class="pill" data-value="Mid-funnel / Consideration">Mid-funnel</button>
+              <button class="pill" data-value="Decision / Bottom-funnel">Decision</button>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label>Solution Category</label>
+            <div class="pill-set" data-field="solution">
+              <button class="pill active" data-value="Cybersecurity">Cybersecurity</button>
+              <button class="pill" data-value="Cloud Infrastructure">Cloud</button>
+              <button class="pill" data-value="AI Infrastructure & Workloads">AI Infra</button>
+              <button class="pill" data-value="Hybrid Work / Modern Workplace">Hybrid Work</button>
+              <button class="pill" data-value="Networking">Networking</button>
+              <button class="pill" data-value="Data Center Modernization">Data Center</button>
+            </div>
+          </div>
+
+          <div class="field-group full">
+            <label>Specific challenge or context (optional)</label>
+            <textarea id="planner-context" placeholder="e.g., 'Mid-market healthcare buyers concerned about ransomware in hospital networks' or 'Net-new logo motion for state governments under tight budget cycles.'"></textarea>
+          </div>
+        </div>
+
+        <div class="planner-actions">
+          <p class="planner-note">Each brief composes from a CDW-specific framework library. Re-run with the same inputs and you'll see different angles. Built and curated by Blake.</p>
+          <button id="generate-btn" class="btn-primary">
+            Generate brief
+            <span class="arrow">→</span>
+          </button>
+        </div>
+
+        <div id="planner-output" class="planner-output">
+          <!-- output renders here -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CDW -->
+<section class="tinted">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Why CDW</span>
+        <h2 class="display-lg">Why I want this role, specifically.</h2>
+      </div>
+      <p class="lede">Not "I'm passionate about technology." Five honest reasons CDW is the place I want to land next, written by me, not a template.</p>
+    </div>
+
+    <div class="why-cdw-grid">
+      <div></div>
+      <ul class="why-cdw-list">
+        <li>
+          <span class="num">01</span>
+          <div>
+            <h4>The buyer journey is the one I know.</h4>
+            <p>Long, multi-stakeholder, consultative. Not a self-serve SaaS funnel. That's the environment I've spent six years building campaigns for.</p>
+          </div>
+        </li>
+        <li>
+          <span class="num">02</span>
+          <div>
+            <h4>The AI-fluency commitment is real, not performative.</h4>
+            <p>The JD asks for curiosity, a learner's mindset, AI as a partner. That's not aspirational language for me. It's how I already work, and it's where I want to keep going.</p>
+          </div>
+        </li>
+        <li>
+          <span class="num">03</span>
+          <div>
+            <h4>Chicago. Stability. A team to learn from.</h4>
+            <p>I'm planning to start a family. CDW has the scale, the team depth, and the geography to be the right next chapter for that.</p>
+          </div>
+        </li>
+        <li>
+          <span class="num">04</span>
+          <div>
+            <h4>Event strategy mapped to campaign stage is exactly what I just did.</h4>
+            <p>Awareness webinars. Mid-funnel workshops. ABM exec events. The JD's framing matches my last two years of work almost line for line.</p>
+          </div>
+        </li>
+        <li>
+          <span class="num">05</span>
+          <div>
+            <h4>I want to mentor, not just execute.</h4>
+            <p>The "preferred" line about mentoring junior team members reads as the part of the role I'd grow into fastest. I've coached agencies, offshore teams, and field sellers. Mentoring marketers is the natural next step.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="container contact-inner">
+    <div class="contact-grid">
+      <div>
+        <h2 class="display-lg">Let's <span class="accent">talk</span>.</h2>
+        <p class="contact-lede">If you've made it this far, the fit is probably worth a 30-minute conversation. I'd love to walk through any of these case studies in more depth, or talk through how I'd approach the first 90 days in this role.</p>
+      </div>
+
+      <div class="contact-channels">
+        <a href="mailto:blakebyelford@gmail.com" class="contact-channel">
+          <div>
+            <span class="label">Email</span>
+            <span class="value">blakebyelford@gmail.com</span>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+        <a href="tel:+12819288447" class="contact-channel">
+          <div>
+            <span class="label">Phone</span>
+            <span class="value">(281) 928-8447</span>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+        <a href="https://linkedin.com/in/blakeelford" target="_blank" rel="noopener" class="contact-channel">
+          <div>
+            <span class="label">LinkedIn</span>
+            <span class="value">linkedin.com/in/blakeelford</span>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>BLAKE ELFORD × CDW / SENIOR CAMPAIGN LEAD APPLICATION</span>
+      <span>BUILT IN CHICAGO, 2026</span>
+    </div>
+  </div>
+</section>
+
+<script>
+  // ---------- UI plumbing ----------
+  document.querySelectorAll('.pill-set').forEach(set => {
+    set.addEventListener('click', e => {
+      const btn = e.target.closest('.pill');
+      if (!btn) return;
+      set.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('in');
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('section').forEach(s => {
+    s.classList.add('reveal');
+    observer.observe(s);
+  });
+
+  // ---------- Loading messages ----------
+  const LOADING_MESSAGES = [
+    "Reviewing the segment buyer profile",
+    "Mapping channels to funnel stage",
+    "Sketching the positioning hook",
+    "Pressure-testing against likely objections",
+    "Tightening the language",
+    "Adding the event strategy layer",
+    "Cleaning up the KPI framework"
+  ];
+
+  let loadingInterval;
+  function startLoadingMessages() {
+    const el = document.getElementById('loading-text-el');
+    if (!el) return;
+    let i = 0;
+    const shuffled = [...LOADING_MESSAGES].sort(() => Math.random() - 0.5);
+    el.textContent = shuffled[0];
+    loadingInterval = setInterval(() => {
+      i = (i + 1) % shuffled.length;
+      el.style.opacity = '0';
+      setTimeout(() => {
+        el.textContent = shuffled[i];
+        el.style.opacity = '1';
+      }, 180);
+    }, 1100);
+  }
+  function stopLoadingMessages() { clearInterval(loadingInterval); }
+
+  // ---------- Segment + Solution metadata ----------
+  const SEGMENT_META = {
+    "Business / Commercial": {
+      short: "Business",
+      buyer_role: "mid-market IT and security leaders",
+      buyer_role_plural: "mid-market IT leaders"
+    },
+    "Government / Public Sector": {
+      short: "Government",
+      buyer_role: "agency CIOs and public sector technology leaders",
+      buyer_role_plural: "public sector technology leaders"
+    },
+    "Education (K-12 + Higher Ed)": {
+      short: "Education",
+      buyer_role: "K-12 district CTOs and higher ed IT leaders",
+      buyer_role_plural: "education technology leaders"
+    },
+    "Healthcare": {
+      short: "Healthcare",
+      buyer_role: "hospital CIOs and clinical IT leaders",
+      buyer_role_plural: "healthcare IT leaders"
+    }
+  };
+
+  const SOLUTION_META = {
+    "Cybersecurity": { short: "security", lower: "cybersecurity" },
+    "Cloud Infrastructure": { short: "cloud", lower: "cloud infrastructure" },
+    "AI Infrastructure & Workloads": { short: "AI infrastructure", lower: "AI infrastructure" },
+    "Hybrid Work / Modern Workplace": { short: "hybrid work", lower: "hybrid workplace" },
+    "Networking": { short: "networking", lower: "networking" },
+    "Data Center Modernization": { short: "data center", lower: "data center modernization" }
+  };
+
+  // ---------- Stage templates (channels, events, KPIs) ----------
+  const STAGE_TEMPLATES = {
+    "Awareness": {
+      channels: [
+        { channel: "Industry research partnership", rationale: "Co-authored research with a credible third party (Forrester, ESG, IDC) positions CDW as a category thinker on {SOLUTION_LOWER} for {SEGMENT_LOWER}, not a reseller pushing product." },
+        { channel: "LinkedIn thought leadership (paid + organic)", rationale: "{BUYER_PLURAL} live on LinkedIn. Pair sponsored content with executive POV from CDW {SOLUTION_SHORT} leaders to seed the category narrative." },
+        { channel: "SEO content engine", rationale: "Long-tail buyer queries around {SOLUTION_LOWER} are where research-stage {SEGMENT_LOWER} buyers start. Build the content depth to be the top result." },
+        { channel: "Industry publication sponsorships", rationale: "{SEGMENT}-specific publications reach the buyer in their existing reading pattern. Native content beats banner ads." }
+      ],
+      kpis: [
+        { kpi: "Engaged target accounts", why: "Tracks whether the right {SEGMENT_LOWER} accounts are interacting, not just total impressions." },
+        { kpi: "Content velocity per account", why: "Multiple touches from a single account is the real awareness signal, especially in {SOLUTION_LOWER} where buying committees are large." },
+        { kpi: "Brand lift in target segments", why: "Survey-based measurement matters more than raw reach for category positioning in {SEGMENT}." }
+      ]
+    },
+    "Mid-funnel / Consideration": {
+      channels: [
+        { channel: "Account-based display + retargeting", rationale: "Re-engage {SEGMENT_LOWER} accounts that interacted with awareness content, this time with {SOLUTION_LOWER}-specific creative." },
+        { channel: "Mid-funnel workshops", rationale: "Half-day virtual sessions with CDW {SOLUTION_SHORT} specialists working through real architecture problems, not pitch decks." },
+        { channel: "Gated assessment tool", rationale: "A {SOLUTION_LOWER} posture or readiness assessment generates SQLs and gives sales an opening grounded in the buyer's actual environment." },
+        { channel: "Email nurture sequence", rationale: "Stage-aware sequence keyed off engagement signals from the assessment and content downloads. Personalized to {BUYER_ROLE}." }
+      ],
+      kpis: [
+        { kpi: "SQL conversion rate", why: "The clearest signal that mid-funnel content and events are turning interest into sales motion." },
+        { kpi: "Opportunity creation per engaged account", why: "Are we turning {SEGMENT_LOWER} engagement into actual qualified opportunities?" },
+        { kpi: "Funnel velocity (awareness to opp, in days)", why: "Mid-funnel is where deals stall. Velocity surfaces friction in the {SOLUTION_LOWER} buying journey early." }
+      ]
+    },
+    "Decision / Bottom-funnel": {
+      channels: [
+        { channel: "Executive ABM (1:few)", rationale: "Targeted outreach from CDW field leadership to {BUYER_ROLE} in named accounts, not generic SDR sequences." },
+        { channel: "Customer reference program", rationale: "Peer-to-peer reference calls with similar {SEGMENT_LOWER} buyers. Validation from a peer beats a thousand decks." },
+        { channel: "Executive roundtables and dinners", rationale: "Curated 8 to 12 person events with peer {BUYER_PLURAL} and CDW {SOLUTION_SHORT} leadership. Validation, references, proximity to deal close." },
+        { channel: "Pilot or proof-of-concept offers", rationale: "Risk-reversal at the bottom of the funnel. A time-boxed {SOLUTION_LOWER} pilot lets {BUYER_ROLE} experience the partnership before committing." }
+      ],
+      kpis: [
+        { kpi: "Pipeline contribution (sourced + influenced)", why: "The clearest revenue measure for {SOLUTION_LOWER} decision-stage programs." },
+        { kpi: "Win rate vs. control", why: "Did {SEGMENT_LOWER} accounts touched by the campaign close at higher rates than untouched ones?" },
+        { kpi: "Sales cycle length", why: "Bottom-funnel programs should compress time-to-close, not just inflate top of funnel." }
+      ]
+    }
+  };
+
+  // Event strategy is always shown for all 3 stages, with per-segment customization
+  function buildEventStrategy(segment, solution) {
+    const segShort = SEGMENT_META[segment].short;
+    const solShort = SOLUTION_META[solution].short;
+    const solLower = SOLUTION_META[solution].lower;
+    const segLower = segShort.toLowerCase();
+
+    return {
+      awareness: {
+        format: `Awareness webinar series with industry analyst co-host`,
+        goal: `Frame the ${solLower} conversation in ${segShort} before buyers are in-market. Capture engaged accounts for downstream nurture.`
+      },
+      mid_funnel: {
+        format: `Mid-funnel architecture workshop`,
+        goal: `Pull engaged ${segLower} accounts into a working session where CDW engineers map current state, identify ${solLower} gaps, and outline a roadmap. No pitch deck.`
+      },
+      decision: {
+        format: `Executive roundtable or industry advisory dinner`,
+        goal: `Curated 8 to 12 person event with peer ${SEGMENT_META[segment].buyer_role_plural} and CDW ${solShort} leadership. Drives validation, references, and proximity to a close.`
+      }
+    };
+  }
+
+  // ---------- Per-combo creative content (24 combos × 2 hook variants × 2 message variants) ----------
+  const COMBO_DATA = {
+    "Business / Commercial::Cybersecurity": {
+      target_buyer: "Mid-market IT and security leaders managing a sprawling tool stack. Buying committees of 5 to 8 people including CISO, CIO, CFO, and lines of business. They are skeptical of vendors who lead with FUD and they want a partner who can simplify the architecture without forcing a rip-and-replace.",
+      hooks: [
+        "Modern security isn't more tools. It's fewer tools that actually work together.",
+        "Your CISO doesn't need another vendor pitch. They need fewer dashboards and faster response."
+      ],
+      messages: [
+        "Mid-market security leaders aren't short on alerts. They're short on signal. Here's how peers are consolidating their stack without losing coverage.",
+        "Most ransomware breaches start with a vulnerability the existing stack already flagged. The gap isn't detection. It's response. CDW's managed detection partners close it."
+      ]
+    },
+    "Business / Commercial::Cloud Infrastructure": {
+      target_buyer: "Mid-market CIOs and infrastructure leaders three to five years into their cloud journey. The honeymoon is over. They're feeling the bill, the complexity, and the gaps. They want clarity on what should stay on-prem, what should move, and what should refactor.",
+      hooks: [
+        "The cloud bill is the second-highest line item on your IT budget. Most of it is overprovisioned.",
+        "Cloud strategy isn't about going all-in. It's about putting each workload where it actually performs best."
+      ],
+      messages: [
+        "Hybrid isn't a transition state anymore. It's the destination. The right cloud architecture saves money and builds resilience at the same time.",
+        "If your cloud spend grew 30% last year and your output didn't, the problem isn't the cloud. It's the strategy underneath it."
+      ]
+    },
+    "Business / Commercial::AI Infrastructure & Workloads": {
+      target_buyer: "Mid-market CIOs, CTOs, and the small but vocal data science teams pushing them. The pressure is real and the budget is finite. They need to choose between building, partnering, and waiting, and they want a partner who can pressure-test their plan before they commit capex.",
+      hooks: [
+        "Everyone has an AI initiative. Most don't have the infrastructure to run one.",
+        "The AI conversation has moved from 'what model' to 'where will it run.' Most enterprises aren't ready for the answer."
+      ],
+      messages: [
+        "Pilot fatigue is real. The companies winning with AI right now aren't the ones with the smartest models. They're the ones with the infrastructure to actually deploy them.",
+        "Your data scientists are building. Your infrastructure team is bracing. We can help align them before the gap shows up in production."
+      ]
+    },
+    "Business / Commercial::Hybrid Work / Modern Workplace": {
+      target_buyer: "Mid-market IT leaders post-RTO debate. The infrastructure is patchwork, the security model is strained, and HR is asking IT to make hybrid work for everyone. They want a partner who can architect the long-term answer without disrupting the day-to-day.",
+      hooks: [
+        "Hybrid work isn't a real estate decision. It's an infrastructure decision.",
+        "Your office is wherever your team gets their best work done. The job is making sure the tools follow them."
+      ],
+      messages: [
+        "Most hybrid work tech was bolted on during the pandemic. It's time to architect it properly, before security and IT support break under the weight.",
+        "Productivity isn't about return-to-office mandates. It's about whether your tools work as well at the kitchen table as they do in the conference room."
+      ]
+    },
+    "Business / Commercial::Networking": {
+      target_buyer: "Mid-market IT leaders managing distributed teams, branch sites, and a connectivity stack stitched together over a decade. They want to modernize without ripping out the SD-WAN they just paid for. SASE conversations are emerging.",
+      hooks: [
+        "Your network is your business now. It deserves to be treated like infrastructure, not plumbing.",
+        "Branch offices, remote workers, edge sites. The perimeter is gone. The network has to come with."
+      ],
+      messages: [
+        "If your team is still managing branch connectivity like it's 2015, you're paying twice: once in cost, once in performance. SD-WAN finally caught up to the actual workload mix.",
+        "The network used to be a cost center. Now it's the floor your entire digital strategy stands on."
+      ]
+    },
+    "Business / Commercial::Data Center Modernization": {
+      target_buyer: "Mid-market infrastructure and IT leaders facing a refresh window. The CFO is asking why capex is so high. The IT team is asking why performance is so low. They want a roadmap that handles both, not just a hardware quote.",
+      hooks: [
+        "Most data center modernization plans fail because they treat it as a hardware refresh. It's actually a workload conversation.",
+        "Refreshing the data center isn't about new gear. It's about deciding what shouldn't be there anymore."
+      ],
+      messages: [
+        "Hybrid isn't a transition phase. It's the answer. The question is which workloads stay, which go to cloud, and what the new core looks like.",
+        "Your CFO sees the data center as a capex problem. Your IT team sees it as a flexibility problem. The right modernization plan solves both."
+      ]
+    },
+
+    "Government / Public Sector::Cybersecurity": {
+      target_buyer: "State and local CIOs, agency CISOs, and federal IT security leaders. Operating under FedRAMP, StateRAMP, FISMA, and CJIS. The ransomware threat is acute and well-documented. They need partners who understand the procurement cycle and the compliance map equally well.",
+      hooks: [
+        "Public sector security isn't about more vendors. It's about clearing compliance without slowing the mission.",
+        "Ransomware groups don't care about your fiscal year. Your defense plan can't either."
+      ],
+      messages: [
+        "State and local agencies are the highest-targeted public sector group in the country right now. The gap isn't budget. It's coordination across agencies and tools.",
+        "FedRAMP, StateRAMP, FISMA. The compliance map is real, but it shouldn't be the whole strategy. Coverage matters more than checkboxes."
+      ]
+    },
+    "Government / Public Sector::Cloud Infrastructure": {
+      target_buyer: "Federal, state, and local IT leaders pushing through cloud-first mandates. Procurement, residency, and compliance are non-negotiable. They want partners who already cleared the certification work and won't slow the project waiting on it.",
+      hooks: [
+        "Cloud in government isn't about migration speed. It's about residency, compliance, and continuity.",
+        "GovCloud isn't a SKU. It's an operating model. Most agencies haven't made the mental switch yet."
+      ],
+      messages: [
+        "Modernization in the public sector isn't 'lift and shift.' It's choosing which workloads earn their place in the cloud, and which serve citizens better on-prem.",
+        "FedRAMP-authorized providers solve part of the problem. The rest is governance, training, and a partner who understands procurement cycles."
+      ]
+    },
+    "Government / Public Sector::AI Infrastructure & Workloads": {
+      target_buyer: "Federal, state, and local technology leaders weighing AI for citizen services. They're cautious about hype, careful about data governance, and watching how federal AI policy lands. They want a partner who can help them pilot responsibly.",
+      hooks: [
+        "AI for government isn't about chatbots. It's about delivering services faster to constituents who are tired of waiting.",
+        "Public sector AI lives or dies on data governance. Most pilots fail before they start."
+      ],
+      messages: [
+        "Citizens don't want to talk to a chatbot. They want their permit, their benefits, their answer. AI that understands that gap is where public sector ROI actually lives.",
+        "AI infrastructure in government is a procurement question first, a technology question second. We can help with both."
+      ]
+    },
+    "Government / Public Sector::Hybrid Work / Modern Workplace": {
+      target_buyer: "Public sector IT leaders managing workforces that don't want to come back to the office, and a procurement environment that wasn't built for hybrid. They need to retain talent against private-sector hybrid offers without breaking compliance.",
+      hooks: [
+        "Hybrid in government isn't optional anymore. The workforce shifted. The tooling has to catch up.",
+        "Federal, state, and local agencies are competing with the private sector for talent. Hybrid is table stakes."
+      ],
+      messages: [
+        "If your agency is losing IT and analyst talent to private sector hybrid roles, the answer isn't a return-to-office mandate. It's better tooling for the people you have.",
+        "Hybrid work in regulated environments is a compliance challenge. We can help you solve it without breaking the audit."
+      ]
+    },
+    "Government / Public Sector::Networking": {
+      target_buyer: "State and local CIOs, federal agency network leads, and the operations teams keeping citizen-facing services running. They're managing legacy WAN, layered VPN, and growing demand from constituents who expect digital services to feel modern.",
+      hooks: [
+        "Citizen services live and die on connectivity. Most agencies are running networks built for a different era.",
+        "The network is now part of the citizen experience, whether IT thinks of it that way or not."
+      ],
+      messages: [
+        "Permits, benefits, court records, public health. Every digital service touches the network. Latency at the edge is constituent dissatisfaction at the front.",
+        "If your agency is layering VPN on top of legacy WAN, you're paying for complexity that hurts the citizen and the agent both."
+      ]
+    },
+    "Government / Public Sector::Data Center Modernization": {
+      target_buyer: "Public sector infrastructure leaders managing aging data centers under cloud-first pressure. Some workloads can't move (compliance, latency, sovereignty). The question is what to modernize on-prem and what to migrate.",
+      hooks: [
+        "Most agency data centers were built for compliance. Now they need to deliver services.",
+        "Data center modernization in government isn't optional. The gear is aging, and the mission isn't waiting."
+      ],
+      messages: [
+        "Lift-and-shift to cloud isn't the answer for every agency workload. Some need to stay on-prem. The question is whether the on-prem footprint is built for what's coming.",
+        "Agency CFOs see capex. Agency CIOs see risk. Modernization done right answers both at once."
+      ]
+    },
+
+    "Education (K-12 + Higher Ed)::Cybersecurity": {
+      target_buyer: "K-12 district CTOs and higher ed CISOs operating with lean teams against threat actors who specifically target education. Student data is regulated, faculty data is sensitive, and the network was designed for openness. The defense has to fit the budget.",
+      hooks: [
+        "Schools and universities are the second-most-targeted ransomware victims in the country. Most are defending with 2018 tooling.",
+        "Student data is regulated. Faculty data is sensitive. Both live on networks designed for openness."
+      ],
+      messages: [
+        "K-12 districts are running on shoestring IT teams against threat actors who know it. The defense doesn't need to be expensive. It needs to be coordinated.",
+        "Higher ed has the unique challenge of openness as a value and security as a requirement. The right architecture serves both."
+      ]
+    },
+    "Education (K-12 + Higher Ed)::Cloud Infrastructure": {
+      target_buyer: "K-12 superintendents, district CTOs, and higher ed IT leaders. Cloud strategy spans student-facing services, faculty research, and administrative systems. E-Rate, FERPA, and budget constraints all in play. They want a partner who knows the funding, the regulations, and the tech.",
+      hooks: [
+        "Cloud for education isn't about cost. It's about meeting students where they actually learn now.",
+        "Hybrid learning didn't go away after 2021. It just stopped being called hybrid. The infrastructure has to keep up."
+      ],
+      messages: [
+        "Districts that built cloud strategies during COVID are now reaping the benefits. The ones that didn't are watching enrollment migrate to those that did.",
+        "Higher ed cloud strategy is a mix of research workloads, student-facing services, and administrative systems. They each need a different answer."
+      ]
+    },
+    "Education (K-12 + Higher Ed)::AI Infrastructure & Workloads": {
+      target_buyer: "Higher ed CIOs and K-12 district leaders trying to get ahead of the AI wave instead of reacting to it. Faculty are asking. Students are using. Administration is uncertain. They need infrastructure that supports controlled experimentation without requiring a moonshot.",
+      hooks: [
+        "AI in education isn't about replacing teachers. It's about giving them back time to teach.",
+        "The conversation in higher ed has moved from 'should we let students use AI' to 'how do we use it ourselves.' Few institutions are ready."
+      ],
+      messages: [
+        "K-12 AI use cases are emerging fast: differentiated instruction, IEP support, administrative automation. The infrastructure question is right behind the policy question.",
+        "Higher ed institutions running AI workloads on research clusters are about to hit a wall. The infrastructure conversation is happening at every Tier 1."
+      ]
+    },
+    "Education (K-12 + Higher Ed)::Hybrid Work / Modern Workplace": {
+      target_buyer: "K-12 district leaders, higher ed administrators, and the IT teams supporting faculty, staff, and admin who all have different hybrid needs. The temporary tools from 2020 are still in place and showing strain.",
+      hooks: [
+        "Faculty, staff, and administration all have different hybrid needs. The IT response can't be one-size-fits-all.",
+        "Education ran the largest hybrid experiment in the world over four years. Most of the tech was meant to be temporary. It isn't anymore."
+      ],
+      messages: [
+        "Faculty want flexibility. Staff want connectivity. IT wants security. Hybrid work in education is a stakeholder problem before it's a technology one.",
+        "If your institution is still running hybrid on 2020-era tooling, the gaps are showing. Productivity, security, and recruitment all suffer."
+      ]
+    },
+    "Education (K-12 + Higher Ed)::Networking": {
+      target_buyer: "K-12 district CTOs, higher ed network engineers, and the administration that hears about wi-fi complaints first. 1:1 device programs, smart classrooms, hybrid learning, and dorm streaming are all converging on a network architected for less.",
+      hooks: [
+        "Campus networks are critical infrastructure now. Most were architected for a different era of usage.",
+        "1:1 device programs, smart classrooms, hybrid learning. Networks built for browsing aren't built for what schools are doing now."
+      ],
+      messages: [
+        "K-12 networks designed pre-2020 are buckling under bandwidth demand. E-Rate funding can help. The architecture has to come first.",
+        "Campus connectivity is now a recruitment factor. Students compare wi-fi the way they compare dorms."
+      ]
+    },
+    "Education (K-12 + Higher Ed)::Data Center Modernization": {
+      target_buyer: "Higher ed CIOs and K-12 district CTOs managing data centers built up over decades. Research workloads, ERP, learning systems, and administrative databases are all in the mix. The refresh question intersects with cloud strategy and AI demand.",
+      hooks: [
+        "Education data centers are often the most overlooked piece of the IT portfolio. They're also the highest-risk.",
+        "Refreshing the campus data center isn't a capex story. It's a continuity story."
+      ],
+      messages: [
+        "Most higher ed data centers grew organically over twenty years. The result is sprawl that costs more, performs less, and creates unmanaged risk.",
+        "K-12 districts running on aging on-prem infrastructure are facing decisions: refresh, hybrid, or full cloud. The right answer depends on the workload."
+      ]
+    },
+
+    "Healthcare::Cybersecurity": {
+      target_buyer: "Hospital CIOs, CISOs, and clinical IT leaders. Operating in the most-targeted ransomware sector in the country with patient safety on the line. HIPAA is the floor, not the ceiling. They want partners who understand that downtime is a clinical event, not just an IT one.",
+      hooks: [
+        "Healthcare is the most-targeted sector for ransomware in the country. The defense can't be reactive anymore.",
+        "Patient safety and security used to be separate IT conversations. They're the same conversation now."
+      ],
+      messages: [
+        "When a hospital network goes down, surgeries get rescheduled. The cost of cybersecurity in healthcare isn't measured in dollars. It's measured in hours of degraded care.",
+        "HIPAA gets a lot of attention. Ransomware-driven outages get more, because they show up on the front page. Both need a strategy."
+      ]
+    },
+    "Healthcare::Cloud Infrastructure": {
+      target_buyer: "Hospital CIOs and IT directors at health systems navigating EHR vendor cloud pushes, clinical workflow demands, and CFO pressure. The cloud conversation isn't binary. It's workload by workload, with patient impact as the constant filter.",
+      hooks: [
+        "Cloud for healthcare isn't a cost question. It's a continuity question.",
+        "Patient data, EHR uptime, clinical workflows. The cloud strategy has to serve all three without compromising any."
+      ],
+      messages: [
+        "Healthcare CIOs aren't moving to cloud for savings. They're moving for resilience, scalability, and the ability to deliver new services without rebuilding the data center.",
+        "EHR vendors are pushing cloud. Clinical teams are asking for new capabilities. The infrastructure team is the bridge. The right architecture makes all three work."
+      ]
+    },
+    "Healthcare::AI Infrastructure & Workloads": {
+      target_buyer: "Hospital CIOs, CMIOs, and the clinical informatics teams piloting AI in radiology, ambient documentation, and predictive analytics. The infrastructure question is right behind the clinical validation question, and most aren't ready.",
+      hooks: [
+        "Clinical AI is here. The infrastructure question is whether your environment can run it safely.",
+        "AI in healthcare lives at the intersection of HIPAA, patient safety, and clinical workflow. None of it works on improvised infrastructure."
+      ],
+      messages: [
+        "Imaging, ambient documentation, predictive analytics. The clinical AI use cases are real. The infrastructure underneath them is the gap most health systems haven't closed.",
+        "Your radiologists want AI assistance. Your CISO wants compliance. Your CFO wants ROI. The right infrastructure plan answers all three."
+      ]
+    },
+    "Healthcare::Hybrid Work / Modern Workplace": {
+      target_buyer: "Hospital IT and HR leaders supporting the back-office workforce: revenue cycle, coding, IT, finance, HR. Hybrid is the norm in non-clinical roles. The infrastructure has to match what they could get in a non-healthcare job, with HIPAA built in.",
+      hooks: [
+        "Healthcare's hybrid workforce isn't clinicians. It's everyone else, and they need the same access without the same risks.",
+        "Coding teams, RCM, IT, finance, HR. Healthcare's back-office is hybrid. The tooling needs to match."
+      ],
+      messages: [
+        "Hybrid in healthcare is rarely about doctors. It's about the back-office staff that keep operations running. Their tooling needs to match the rest of the workforce, with healthcare-specific compliance built in.",
+        "Telehealth got the headlines. The hybrid story in healthcare is everywhere else: billing, coding, IT, HR. The infrastructure has to serve them too."
+      ]
+    },
+    "Healthcare::Networking": {
+      target_buyer: "Hospital network engineers, biomedical IT, and CISOs managing a mix of medical devices, EHR endpoints, imaging traffic, and clinical IoT. The network is doing more than it was designed for, and segmentation is now a clinical safety conversation.",
+      hooks: [
+        "Clinical networks are life-critical infrastructure. Most are running on architectures designed for a different mix of devices.",
+        "Connected medical devices, EHR endpoints, imaging traffic, IoT in patient rooms. The network is doing more than it was built for."
+      ],
+      messages: [
+        "When your network slows, your EHR slows. When your EHR slows, your clinicians work around it. That's where errors creep in.",
+        "Network segmentation in a hospital isn't a security feature. It's a patient safety feature. The wrong device on the wrong VLAN is a real-world risk."
+      ]
+    },
+    "Healthcare::Data Center Modernization": {
+      target_buyer: "Health system CIOs and infrastructure leaders managing data centers running EHR, imaging, lab systems, research workloads, and emerging AI/analytics. The architecture needs to evolve from EHR-centric to workload-diverse, without sacrificing uptime.",
+      hooks: [
+        "Healthcare data centers are some of the most workload-diverse environments in IT. Modernization can't be one-size-fits-all.",
+        "EHR, imaging, research, lab systems, clinical applications. The healthcare data center has to keep them all running, all the time."
+      ],
+      messages: [
+        "Healthcare data centers grew up around the EHR. Now they're being asked to host AI, analytics, and edge clinical workloads. Refreshing the architecture is a 2026 priority for most health systems.",
+        "The 'cloud-only' answer doesn't work for clinical workloads with sub-millisecond requirements. Hybrid done right, with the data center as a strategic asset, is where healthcare IT is heading."
+      ]
+    }
+  };
+
+  // ---------- Composition ----------
+  function fillTemplate(str, segment, solution) {
+    const segMeta = SEGMENT_META[segment];
+    const solMeta = SOLUTION_META[solution];
+    return str
+      .replaceAll('{SEGMENT}', segMeta.short)
+      .replaceAll('{SEGMENT_LOWER}', segMeta.short.toLowerCase())
+      .replaceAll('{SOLUTION_SHORT}', solMeta.short)
+      .replaceAll('{SOLUTION_LOWER}', solMeta.lower)
+      .replaceAll('{BUYER_ROLE}', segMeta.buyer_role)
+      .replaceAll('{BUYER_PLURAL}', segMeta.buyer_role_plural);
+  }
+
+  function buildBrief(segment, solution, stage, context) {
+    const key = `${segment}::${solution}`;
+    const combo = COMBO_DATA[key];
+    const stageData = STAGE_TEMPLATES[stage];
+
+    if (!combo || !stageData) return null;
+
+    // Random variant selection (creates the "feels live" effect on refresh)
+    const hook = combo.hooks[Math.floor(Math.random() * combo.hooks.length)];
+    const message = combo.messages[Math.floor(Math.random() * combo.messages.length)];
+
+    // Fill stage templates with segment + solution context
+    const channel_mix = stageData.channels.map(c => ({
+      channel: c.channel,
+      rationale: fillTemplate(c.rationale, segment, solution)
+    }));
+    const measurement = stageData.kpis.map(k => ({
+      kpi: k.kpi,
+      why: fillTemplate(k.why, segment, solution)
+    }));
+
+    // Event strategy is always 3 stages, custom-built per segment + solution
+    const event_strategy = buildEventStrategy(segment, solution);
+
+    // Weave optional context into the target buyer paragraph (transparent acknowledgment)
+    let target_buyer = combo.target_buyer;
+    if (context && context.length > 0) {
+      target_buyer += ` Layered consideration for this campaign: ${context}`;
+    }
+
+    return {
+      positioning_hook: hook,
+      target_buyer,
+      channel_mix,
+      event_strategy,
+      measurement,
+      sample_message: message
+    };
+  }
+
+  // ---------- Render with streaming reveal ----------
+  function renderBriefStreaming(brief, segment, stage, solution) {
+    const out = document.getElementById('planner-output');
+    out.classList.add('visible');
+
+    // Build the HTML structure first, with sections initially hidden
+    const channelHTML = brief.channel_mix.map(c =>
+      `<li><strong>${escapeHTML(c.channel)}</strong>${escapeHTML(c.rationale)}</li>`
+    ).join('');
+
+    const measureHTML = brief.measurement.map(m =>
+      `<li><strong>${escapeHTML(m.kpi)}</strong>${escapeHTML(m.why)}</li>`
+    ).join('');
+
+    const ev = brief.event_strategy;
+    const eventHTML = `
+      <li><strong>Awareness, ${escapeHTML(ev.awareness.format)}</strong>${escapeHTML(ev.awareness.goal)}</li>
+      <li><strong>Mid-funnel, ${escapeHTML(ev.mid_funnel.format)}</strong>${escapeHTML(ev.mid_funnel.goal)}</li>
+      <li><strong>Decision, ${escapeHTML(ev.decision.format)}</strong>${escapeHTML(ev.decision.goal)}</li>
+    `;
+
+    const stageShort = stage.split(' / ')[0]; // "Awareness", "Mid-funnel", "Decision"
+    const stageLabel = stage === 'Awareness' ? 'Awareness focus'
+                     : stage === 'Mid-funnel / Consideration' ? 'Mid-funnel focus'
+                     : 'Decision focus';
+
+    out.innerHTML = `
+      <div class="brief-meta sec" data-step="0">
+        <span class="brief-meta-pill">${escapeHTML(SEGMENT_META[segment].short)}</span>
+        <span class="brief-meta-pill">${escapeHTML(stageLabel)}</span>
+        <span class="brief-meta-pill">${escapeHTML(SOLUTION_META[solution].short)}</span>
+      </div>
+
+      <div class="brief-hook sec" data-step="1">${escapeHTML(brief.positioning_hook)}</div>
+
+      <div class="brief-grid">
+        <div class="brief-block sec" data-step="2">
+          <h5>Target Buyer</h5>
+          <p>${escapeHTML(brief.target_buyer)}</p>
+        </div>
+
+        <div class="brief-block sec" data-step="3">
+          <h5>Channel Mix</h5>
+          <ul class="brief-list">${channelHTML}</ul>
+        </div>
+
+        <div class="brief-block sec" data-step="4">
+          <h5>Event Strategy by Stage</h5>
+          <ul class="brief-list">${eventHTML}</ul>
+        </div>
+
+        <div class="brief-block sec" data-step="5">
+          <h5>Measurement</h5>
+          <ul class="brief-list">${measureHTML}</ul>
+        </div>
+
+        <div class="brief-message sec" data-step="6">
+          <h5>Sample Message</h5>
+          <blockquote>"${escapeHTML(brief.sample_message)}"</blockquote>
+        </div>
+      </div>
+    `;
+
+    // Set initial hidden state on each section, then reveal sequentially
+    const sections = out.querySelectorAll('.sec');
+    sections.forEach(s => {
+      s.style.opacity = '0';
+      s.style.transform = 'translateY(10px)';
+      s.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    });
+
+    sections.forEach((s, i) => {
+      setTimeout(() => {
+        s.style.opacity = '1';
+        s.style.transform = 'translateY(0)';
+      }, i * 280);
+    });
+  }
+
+  // ---------- Generate flow ----------
+  document.getElementById('generate-btn').addEventListener('click', () => {
+    const segment = document.querySelector('[data-field="segment"] .pill.active')?.dataset.value || 'Business / Commercial';
+    const stage = document.querySelector('[data-field="stage"] .pill.active')?.dataset.value || 'Awareness';
+    const solution = document.querySelector('[data-field="solution"] .pill.active')?.dataset.value || 'Cybersecurity';
+    const context = document.getElementById('planner-context').value.trim();
+
+    const btn = document.getElementById('generate-btn');
+    const out = document.getElementById('planner-output');
+
+    btn.disabled = true;
+    out.classList.add('visible');
+    out.innerHTML = `
+      <div class="output-loading">
+        <div class="loading-orb"></div>
+        <div class="loading-text" id="loading-text-el" style="transition: opacity 0.2s;">Composing brief</div>
+      </div>
+    `;
+
+    // Scroll the output into view smoothly
+    setTimeout(() => out.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+
+    startLoadingMessages();
+
+    // Variable delay (1.8s to 2.6s) to feel more organic
+    const delay = 1800 + Math.random() * 800;
+
+    setTimeout(() => {
+      stopLoadingMessages();
+      const brief = buildBrief(segment, solution, stage, context);
+
+      if (!brief) {
+        out.innerHTML = `
+          <div class="output-error">
+            <strong>That combination isn't in the library yet.</strong><br/>
+            Try a different segment or solution category, or reach out and Blake will add it.
+          </div>
+        `;
+        btn.disabled = false;
+        return;
+      }
+
+      renderBriefStreaming(brief, segment, stage, solution);
+      btn.disabled = false;
+    }, delay);
+  });
+
+  function escapeHTML(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+</script>
+
+</body>
+</html>
